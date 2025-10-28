@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@layer base {
+    html {
+        @apply antialiased;
+    }
+
+    body {
+        @apply bg-gray-50;
+    }
+}
+
+@layer components {
+    .container {
+        @apply px-4 mx-auto sm:px-6 lg:px-8;
+    }
+
+    .btn {
+        @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+    }
+
+    .input {
+        @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+    }
+
+    .card {
+        @apply bg-white shadow rounded-lg;
+    }
+
+    .card-body {
+        @apply px-4 py-5 sm:p-6;
+    }
+}
+
+/* Responsive Typography */
+.text-responsive {
+    @apply text-base sm:text-lg lg:text-xl;
+}
+
+/* Mobile Navigation */
+.mobile-menu {
+    @apply fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out;
+}
+
+.mobile-menu.hidden {
+    @apply translate-x-full;
+}
+
+/* Table Responsive Styles */
+@media (max-width: 640px) {
+    .responsive-table {
+        @apply block;
+    }
+
+    .responsive-table thead {
+        @apply hidden;
+    }
+
+    .responsive-table tbody tr {
+        @apply block border-b border-gray-200 py-4;
+    }
+
+    .responsive-table tbody td {
+        @apply block text-right py-2;
+    }
+
+    .responsive-table tbody td::before {
+        content: attr(data-label);
+        @apply float-left font-medium text-gray-700;
+    }
+}
+
+/* Form Responsive Styles */
+.form-group {
+    @apply space-y-4 sm:space-y-6;
+}
+
+.form-row {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6;
+}
+
+/* Card Grid Layout */
+.card-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+@theme {
+    --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
