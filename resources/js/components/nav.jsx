@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import "../../css/styles.scss";
 import LoginModal from './modal';
+import "../../css/styles.scss";
 
 const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,4 +28,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export {NavBar as default };
