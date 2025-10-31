@@ -500,7 +500,7 @@
                     
                     <div class="comparison-section">
                         <h3 class="comparison-title">Comparison</h3>
-                        <p class="comparison-subtitle">(This Week vs.</p>
+                        <p class="comparison-subtitle">This Week vs.</p>
                         
                         <div class="chart-container">
                             <svg class="line-chart" viewBox="0 0 400 150">

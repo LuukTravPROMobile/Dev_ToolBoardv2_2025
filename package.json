@@ -12,7 +12,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "vite": "^7.1.12",
-    "@vitejs/plugin-react": "^4.3.1"
+    "@vitejs/plugin-react": "^4.3.1",
+    "sass-embedded": "^1.93.2",
+    "vite": "^7.1.12"
   }
 }

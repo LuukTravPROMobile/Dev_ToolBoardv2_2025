@@ -1,0 +1,30 @@
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+        
+.overview-item {
+    background: #f9f9f9;
+    padding: $twenty;
+    border-radius: $ten;
+    text-align: center;
+}
+        
+.overview-label {
+    font-size: 0.9em;
+    color: $dashboard-gray;
+    margin-bottom: 5px;
+}
+        
+.overview-value {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: $body-text-color;
+}
+        
+.overview-subvalue {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 5px;
+}
