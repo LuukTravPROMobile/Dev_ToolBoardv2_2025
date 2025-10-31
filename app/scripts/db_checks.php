@@ -8,10 +8,13 @@ $app = require_once __DIR__ . '/../bootstrap/app.php';
 $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
 $kernel->bootstrap();
 
+
 use Illuminate\Support\Facades\DB;
+
 
 echo "\n--- tables in information_schema for dev_toolboard ---\n";
 print_r(DB::select("SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'dev_toolboard' ORDER BY table_name"));
+
 
 echo "\n--- current user info ---\n";
 try {
@@ -20,11 +23,13 @@ try {
 	echo "Error running USER(): " . $e->getMessage() . "\n";
 }
 
+
 try {
 	print_r(DB::select("SELECT CURRENT_USER() AS current_user"));
 } catch (\Exception $e) {
 	echo "Error running CURRENT_USER(): " . $e->getMessage() . "\n";
 }
+
 
 echo "\n--- grants for current_user ---\n";
 try {
@@ -32,6 +37,7 @@ try {
 } catch (\Exception $e) {
 	echo "Error running SHOW GRANTS: " . $e->getMessage() . "\n";
 }
+
 
 echo "\n--- row counts (quick health check) ---\n";
 try {
