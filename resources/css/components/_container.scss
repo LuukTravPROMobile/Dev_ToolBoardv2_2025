@@ -1,0 +1,20 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: $thirty $fourty;
+}
+
+// Voor Bottom Grid:
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $thirty;
+    margin-top: $thirty;
+}
+
+// Voor Ticket Tracker:
+
+.table-container {
+    overflow-x: auto;
+}

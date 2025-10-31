@@ -1,0 +1,55 @@
+.navbar {
+    background: linear-gradient(135deg, #d44e1dff 0%, #de6114ff 100%);
+    padding: $twenty $fourty;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px $ten rgba(0,0,0,0.1);
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: $thirty;
+}
+
+.navbar-title {
+    color: white;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.navbar-right {
+    display: flex;
+    gap: $twenty;
+    align-items: center;
+}
+
+.nav-badge {
+    background: white;
+    color: #ff6b35;
+    padding: $eight 1.6rem;
+    border-radius: $twenty;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+        
+.logo-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: white;
+    border-radius: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $twelve;
+}

@@ -1,0 +1,59 @@
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $thirty;
+    margin-bottom: $thirty;
+}
+        
+.card {
+    background: white;
+    padding: $thirty;
+    border-radius: $twelve;
+    box-shadow: 0 0.2rem $twelve rgba(0,0,0,0.08);
+}
+        
+.card-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: $eight;
+    color: $body-text-color;
+}
+        
+.card-subtitle {
+    font-size: 0.9em;
+    color: $dashboard-gray;
+    margin-bottom: $twenty-five;
+}
+
+// Voor Recent Errors:
+
+.recent-error-card {
+    background: #f9f9f9;
+    padding: $twenty;
+    border-radius: $ten;
+    border-left: 4px solid #ff6b35;
+    margin-bottom: 20px;
+}
+        
+.project-name {
+    font-weight: 600;
+    color: $body-text-color;
+    margin-bottom: 5px;
+}
+        
+.project-meta {
+    font-size: 0.85em;
+    color: $dashboard-gray;
+    margin-bottom: $ten;
+}
+        
+.error-message {
+    color: #333;
+    font-size: 0.95em;
+    margin-bottom: $eight;
+}
+        
+.error-time {
+    font-size: 0.85em;
+    color: #999;
+}
