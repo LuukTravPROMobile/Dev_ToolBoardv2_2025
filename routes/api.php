@@ -95,3 +95,12 @@ Route::middleware(['auth:sanctum', 'role:developer,admin'])->group(function () {
 // Sentry error summary endpoint (cached)
 // (moved into v1 auth group)
 
+
+use App\Http\Controllers\MondayController;
+
+Route::prefix('monday')->group(function () {
+    Route::get('/tickets', [MondayController::class, 'getTickets']);
+    Route::get('/tickets/{id}', [MondayController::class, 'getTicketById']);
+    Route::get('/tickets/search', [MondayController::class, 'searchTickets']);
+});
+
