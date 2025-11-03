@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LoginModal from './modal';
+import { Link } from 'react-router-dom';
 import "../../css/styles.scss";
 
 const NavBar = () => {
@@ -12,7 +13,7 @@ const NavBar = () => {
           <div className="logo-icon"></div>
           <span>TravPRO</span>
         </div>
-        <div className="navbar-title">Developer Dashboard</div>
+        <Link to='/' className='link-title'>Developer Dashboard</Link>
       </div>
 
       <div className="navbar-right">

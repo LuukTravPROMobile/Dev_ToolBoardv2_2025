@@ -18,3 +18,16 @@
 .table-container {
     overflow-x: auto;
 }
+
+// Voor Alternatieve Pagina's:
+
+.page-container {
+  display: flex;
+  flex-direction: column;   // stack children vertically
+  justify-content: center;  // center vertically
+  align-items: center;      // center horizontally
+  min-height: 100vh;        // fill full viewport height
+  text-align: center;       // center text inside children
+  padding: 1rem;            // optional padding for spacing
+  box-sizing: border-box;   // include padding in width/height
+}
