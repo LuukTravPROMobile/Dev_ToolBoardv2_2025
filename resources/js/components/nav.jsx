@@ -1,24 +1,64 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React, { useState, useRef, useEffect } from 'react';
+import LoginModal from './modal';
+import { Link } from 'react-router-dom';
 import "../../css/styles.scss";
 
 const NavBar = () => {
-    return (
-        <div className="navbar">
-            <div className="navbar-left">
-                <div className="logo">
-                    <div className="logo-icon"></div>
-                    <span>TravPRO</span>
-                </div>
-                <div className="navbar-title">Developer Dashboard</div>
-            </div>
-            <div className="navbar-right">
-                <div className="nav-badge">Sentry</div>
-                <div className="nav-badge">Active</div>
-                <div className="menu-icon">☰</div>
-            </div>
-        </div>
-    )
-}
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const sentryActive = "Active"; // This can be dynamic based on your app's state
 
-export {NavBar as default}
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div className="navbar">
+      <div className="navbar-left">
+        <div className="logo">
+          <div className="logo-icon"></div>
+          <span>TravPRO</span>
+        </div>
+        <Link to='/' className='link-title'>Developer Dashboard</Link>
+      </div>
+
+      <div className="navbar-right">
+        <div className="nav-badge">Sentry is {sentryActive}</div>
+        
+        {/* Menu Button */}
+        <div className="menu-container" ref={dropdownRef}>
+          <button 
+            className="menu-icon dropdown-login" 
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
+            ☰
+          </button>
+
+          {/* Dropdown Menu */}
+          {isDropdownOpen && (
+            <div className="dropdown-menu">
+              <button onClick={() => setIsModalOpen(true)}>Login</button>
+              <Link to="/profile">Profile</Link>
+              <button onClick={() => alert("Logging out...")}>Logout</button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Modal */}
+      <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </div>
+  );
+};
+
+export { NavBar as default };

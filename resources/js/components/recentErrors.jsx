@@ -3,7 +3,7 @@ import "../../css/styles.scss";
 
 const RecentErrors = () => {
     return (
-        <div className="card" style={{ marginBottom: '20px' }}>
+        <div className="card recent-spacing" style={{ marginBottom: '20px' }}>
             <h2 className="card-title">Most Recent Error</h2>
             <p className="card-subtitle">From project error</p>
                     
