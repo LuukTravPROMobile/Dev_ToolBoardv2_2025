@@ -1,0 +1,67 @@
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start; /* Align children to the left */
+  align-items: flex-start;     /* Align children to the top */
+  background-image: url('/path/to/your/image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 60px; 
+  text-align: left; /* still good for text inside children */
+  padding-left: 20px; /* optional: give some horizontal padding */
+}
+
+
+.not-found-page {
+  background: rgba(0, 0, 0, 0.5); // optional: overlay to make text readable
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+.not-found-message {
+    font-size: 1.2em;
+    margin-top: $twenty;
+}
+
+.button-login {
+    background-color: #ff6b35;
+    color: white;
+    padding: $twelve $twenty;
+    border: none;
+    border-radius: $eight;
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    margin-top: $eight;
+
+    &:hover {
+        background-color: darken(#ff6b35, 10%);
+    }
+}
+
+.login-input-group {
+    margin-top: $eight;
+    margin-bottom: $twenty;
+
+    label {
+        display: block;
+        margin-bottom: $eight;
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+    input {
+        width: 100%;
+        padding: $twelve;
+        border: none;
+        border-radius: $eight;
+        font-size: 1em;
+    }
+}

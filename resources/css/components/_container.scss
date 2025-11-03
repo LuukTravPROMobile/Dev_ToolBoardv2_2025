@@ -1,0 +1,55 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: $thirty $fourty;
+}
+
+// Voor Bottom Grid:
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $thirty;
+    margin-top: $thirty;
+}
+
+// Voor Ticket Tracker:
+
+.table-container {
+    overflow-x: auto;
+}
+
+// Voor Alternatieve Pagina's:
+
+.page-container {
+  display: flex;
+  flex-direction: column;   // stack children vertically
+  justify-content: center;  // center vertically
+  align-items: center;      // center horizontally
+  min-height: 100vh;        // fill full viewport height
+  text-align: center;       // center text inside children
+  padding: 1rem;            // optional padding for spacing
+  box-sizing: border-box;   // include padding in width/height
+}
+
+.profile-container {
+    background: gray;
+    padding: $thirty;
+    border-radius: $twelve;
+    box-shadow: 0 2px $eight rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-image {
+    height: 100px;
+    width: 100px;
+}
+
+.profile-info {
+    margin-top: $twenty;
+    margin-left: $twenty;
+}

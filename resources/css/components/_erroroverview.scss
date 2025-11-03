@@ -1,0 +1,78 @@
+.card {
+    background: white;
+    padding: $thirty;
+    border-radius: $twelve;
+    box-shadow: 0 2px $eight rgba(0,0,0,0.08);
+}
+        
+.card-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: $eight;
+    color: #1a1a1a;
+}
+        
+.card-subtitle {
+    font-size: 0.9em;
+    color: $dashboard-gray;
+    margin-bottom: $twenty-five;
+}
+        
+/* Error Overview */
+.error-stats {
+    display: flex;
+    gap: $fourty;
+    margin-bottom: $thirty;
+}
+        
+.error-stat {
+    flex: 1;
+}
+        
+.error-stat-label {
+    font-size: 0.9em;
+    color: $dashboard-gray;
+    margin-bottom: $eight;
+}
+        
+.error-stat-value {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: $body-text-color;
+}
+        
+.error-list {
+    margin-top: $twenty-five;
+}
+        
+.error-list h4 {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: $body-text-color;
+}
+        
+.error-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $twelve $zero;
+    border-bottom: 1px solid #f0f0f0;
+}
+        
+.error-item:last-child {
+    border-bottom: none;
+}
+        
+.error-text {
+    color: #333;
+    font-size: 0.95em;
+}
+        
+.error-count {
+    font-weight: 600;
+    color: $body-text-color;
+}
+
+.recent-spacing {
+    margin-top: $twenty;
+}

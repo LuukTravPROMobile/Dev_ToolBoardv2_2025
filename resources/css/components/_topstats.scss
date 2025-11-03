@@ -1,0 +1,93 @@
+.top-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $twenty;
+    margin-bottom: $thirty;
+}
+// Card and card-button share the same visual style
+/* Shared base styles for both .stat-card and .stat-card-btn */
+.stat-card,
+button.stat-card-btn {
+  background: white;
+  padding: $twenty-five;
+  border-radius: $twelve;
+  box-shadow: 0 2px $eight rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+  color: inherit;
+  display: block;
+  width: 100%;
+  text-align: left; // keep content left-aligned like a card
+}
+
+/* Reset the button so it visually behaves like a div */
+button.stat-card-btn {
+  all: unset;             // 💥 this removes default browser button styles
+  box-sizing: border-box; // needed because 'all: unset' resets it
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  background: white;
+  padding: $twenty-five;
+  border-radius: $twelve;
+  box-shadow: 0 2px $eight rgba(0, 0, 0, 0.08);
+  text-align: left;
+
+  // optional accessibility focus ring
+  &:focus-visible {
+    outline: 2px solid rgba(0, 0, 0, 0.15);
+    outline-offset: 3px;
+  }
+
+  // keep it visually static (no hover/active change)
+  &:hover,
+  &:active {
+    background: white;
+    box-shadow: 0 2px $eight rgba(0, 0, 0, 0.08);
+    transform: none;
+  }
+}
+
+/* Label and value styles for both types */
+.stat-card .stat-label,
+button.stat-card-btn .stat-label {
+  font-size: 0.95em;
+  color: #f3531eff;
+  margin-bottom: $eight;
+  font-weight: 500;
+}
+
+.stat-card .stat-value,
+button.stat-card-btn .stat-value {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: $body-text-color;
+}
+
+
+
+// Voor Button
+
+button.stat-card-btn {
+  background: white;
+  padding: $twenty-five;
+  border-radius: $twelve;
+  box-shadow: 0 2px $eight rgba(0, 0, 0, 0.08);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: none;
+}
+
+button.stat-card-btn:hover,
+button.stat-card-btn:focus,
+button.stat-card-btn:active {
+  background: white;
+  box-shadow: 0 2px $eight rgba(0, 0, 0, 0.08);
+  transform: none;
+
+  &:hover {
+        background-color: darken(#ffffff, 10%);
+  }
+}

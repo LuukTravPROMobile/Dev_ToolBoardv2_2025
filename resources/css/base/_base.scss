@@ -1,0 +1,67 @@
+@import './settings';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: $background-blue;
+    color: $body-text-color;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+.link-white {
+  color: #000000;       // white text
+  text-decoration: none; // remove underline
+  cursor: pointer;      // pointer on hover
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;      // stays white on hover/focus
+    text-decoration: none;
+    outline: none;       // remove focus outline if you want
+  }
+
+  &:active {
+    color: #ffffff;      // stays white on click
+  }
+}
+
+.link-title {
+  color: #ffffff;        // white text
+  text-decoration: none; // remove underline
+  cursor: pointer;       // pointer on hover
+  font-size: 1.3em;      // set font size
+  font-weight: 500;      // set font weight
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;      // stays white on hover/focus
+    text-decoration: none;
+    outline: none;       // remove focus outline if you want
+  }
+
+  &:active {
+    color: $dashboard-gray;      // stays white on click
+  }
+}
