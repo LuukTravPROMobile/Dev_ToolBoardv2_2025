@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import LoginModal from './modal';
 import { Link } from 'react-router-dom';
 import "../../css/styles.scss";
 
 const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="navbar">
@@ -19,14 +34,32 @@ const NavBar = () => {
       <div className="navbar-right">
         <div className="nav-badge">Sentry</div>
         <div className="nav-badge">Active</div>
-        <button className="menu-icon" onClick={() => setIsModalOpen(true)}>
-          ☰
-        </button>
+        
+        {/* Menu Button */}
+        <div className="menu-container" ref={dropdownRef}>
+          <button 
+            className="menu-icon" 
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
+            ☰
+          </button>
+
+          {/* Dropdown Menu */}
+          {isDropdownOpen && (
+            <div className="dropdown-menu">
+              <button onClick={() => setIsModalOpen(true)}>Login</button>
+              <Link to="/profile">Profile</Link>
+              <Link to="/settings">Settings</Link>
+              <button onClick={() => alert("Logging out...")}>Logout</button>
+            </div>
+          )}
+        </div>
       </div>
 
+      {/* Modal */}
       <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
 
-export {NavBar as default };
+export { NavBar as default };
