@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFoundPage from './components/notFoundPage';
 import LoginPage from './components/loginPage';
 import RegisterPage from './components/registerPage.jsx';
+import ProfilePage from './components/profilePage.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
   );

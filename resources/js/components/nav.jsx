@@ -7,6 +7,7 @@ const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const sentryActive = "Active"; // This can be dynamic based on your app's state
 
   // Close dropdown if clicked outside
   useEffect(() => {
@@ -32,8 +33,7 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-right">
-        <div className="nav-badge">Sentry</div>
-        <div className="nav-badge">Active</div>
+        <div className="nav-badge">Sentry is {sentryActive}</div>
         
         {/* Menu Button */}
         <div className="menu-container" ref={dropdownRef}>
@@ -49,7 +49,6 @@ const NavBar = () => {
             <div className="dropdown-menu">
               <button onClick={() => setIsModalOpen(true)}>Login</button>
               <Link to="/profile">Profile</Link>
-              <Link to="/settings">Settings</Link>
               <button onClick={() => alert("Logging out...")}>Logout</button>
             </div>
           )}
