@@ -86,3 +86,22 @@
     }
   }
 }
+
+.dropdown-login {
+    background-color: #dc5d15;
+    color: white;
+    padding: $twelve $twenty;
+    border: none;
+    border-radius: $eight;
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    text-align: left;
+
+    &:hover {
+        background-color: darken(#dc5d15, 10%);
+    }
+}

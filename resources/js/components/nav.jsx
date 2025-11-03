@@ -38,7 +38,7 @@ const NavBar = () => {
         {/* Menu Button */}
         <div className="menu-container" ref={dropdownRef}>
           <button 
-            className="menu-icon" 
+            className="menu-icon dropdown-login" 
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
             ☰
