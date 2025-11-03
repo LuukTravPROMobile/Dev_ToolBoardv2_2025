@@ -6,6 +6,7 @@ const productRoutes = require("./products");
 
 router.use("/users", userRoutes);
 router.use("/products", productRoutes);
+router.get()
 
 module.exports = router;
 // Compare this snippet from src/routes/index.js:
