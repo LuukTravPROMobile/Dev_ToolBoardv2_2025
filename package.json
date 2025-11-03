@@ -1,4 +1,5 @@
 {
+  "name": "travpro-dashboard",
   "private": true,
   "type": "module",
   "scripts": {
@@ -24,18 +25,21 @@
   "name": "my-vite-react-app",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.3",
+    "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "sass-embedded": "^1.93.2",
-    "vite": "^7.1.12"
+    "@vitejs/plugin-react": "^4.0.0",
+    "sass": "^1.66.0",
+    "vite": "^5.0.0"
   }
 }
