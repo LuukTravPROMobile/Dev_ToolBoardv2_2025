@@ -1,0 +1,26 @@
+.top-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $twenty;
+    margin-bottom: $thirty;
+}
+        
+.stat-card {
+    background: white;
+    padding: $twenty-five;
+    border-radius: $twelve;
+    box-shadow: 0 2px $eight rgba(0,0,0,0.08);
+}
+        
+.stat-label {
+    font-size: 0.95em;
+    color: #f3531eff;
+    margin-bottom: $eight;
+    font-weight: 500;
+}
+        
+.stat-value {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: $body-text-color;
+}

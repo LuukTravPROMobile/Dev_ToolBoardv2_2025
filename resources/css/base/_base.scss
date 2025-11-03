@@ -1,0 +1,29 @@
+@import './settings';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: $background-blue;
+    color: $body-text-color;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
