@@ -98,9 +98,30 @@ Route::middleware(['auth:sanctum', 'role:developer,admin'])->group(function () {
 
 use App\Http\Controllers\MondayController;
 
-Route::prefix('monday')->group(function () {
-    Route::get('/tickets', [MondayController::class, 'getTickets']);
-    Route::get('/tickets/{id}', [MondayController::class, 'getTicketById']);
-    Route::get('/tickets/search', [MondayController::class, 'searchTickets']);
-});
 
+Route::prefix('monday')->group(function () {
+    
+    // Boards
+    Route::get('/boards', [MondayController::class, 'getBoards']);
+    Route::get('/boards/{id}/columns', [MondayController::class, 'getBoardColumns']);
+    
+    // Tickets - CRUD
+    Route::get('/tickets', [MondayController::class, 'getTickets']);
+    Route::get('/tickets/{id}', [MondayController::class, 'getTicket']);
+    Route::post('/tickets', [MondayController::class, 'createTicket']);
+    Route::put('/tickets/{id}', [MondayController::class, 'updateTicket']);
+    Route::delete('/tickets/{id}', [MondayController::class, 'deleteTicket']);
+    
+    // Ticket Actions
+    Route::post('/tickets/{id}/archive', [MondayController::class, 'archiveTicket']);
+    Route::post('/tickets/{id}/duplicate', [MondayController::class, 'duplicateTicket']);
+    Route::post('/tickets/{id}/move', [MondayController::class, 'moveTicket']);
+    Route::post('/tickets/{id}/comments', [MondayController::class, 'addComment']);
+    
+    // Search & Bulk
+    Route::post('/tickets/search', [MondayController::class, 'searchTickets']);
+    Route::post('/tickets/bulk-update', [MondayController::class, 'bulkUpdateTickets']);
+    
+    // Monitoring
+    Route::get('/rate-limits', [MondayController::class, 'getRateLimits']);
+});

@@ -3,7 +3,7 @@
         'name' => 'luuktravpromobile/dev-toolboard',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => '86094fe761b69ea1d2395c43adacee7771c88fc6',
+        'reference' => 'e916264d16fa2a982f3dfcb5c56747aa7e827533',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -526,7 +526,7 @@
         'luuktravpromobile/dev-toolboard' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => '86094fe761b69ea1d2395c43adacee7771c88fc6',
+            'reference' => 'e916264d16fa2a982f3dfcb5c56747aa7e827533',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
