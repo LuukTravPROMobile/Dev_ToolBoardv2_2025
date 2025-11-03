@@ -14,7 +14,7 @@ const LoginPage = () => {
     console.log('Password:', password);
   };
 
-  const goHome = () => navigate('/');
+  const goHome = () => navigate('/register');
 
   return (
     <div

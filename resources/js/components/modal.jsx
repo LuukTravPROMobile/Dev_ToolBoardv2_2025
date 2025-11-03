@@ -18,7 +18,7 @@ const LoginModal = ({ isOpen, onClose }) => (
     <div className="modal-content">
         <h3 className="modal__title">Login</h3>
         <p>Login to acces TravPRO Mobile's company dashboard</p>
-        <Link to="/login" className='link-white'>Login</Link>
+        <Link to="/login" className='link-white' onClick={onClose}>Login</Link>
         <button className="btn-close" onClick={onClose}>Close</button>
     </div>
 </Modal>

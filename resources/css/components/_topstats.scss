@@ -86,4 +86,8 @@ button.stat-card-btn:active {
   background: white;
   box-shadow: 0 2px $eight rgba(0, 0, 0, 0.08);
   transform: none;
+
+  &:hover {
+        background-color: darken(#ffffff, 10%);
+  }
 }

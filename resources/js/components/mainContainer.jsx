@@ -1,17 +1,33 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import TopStats from './topStats'
-import MainGrid from './mainGrid'
-import BottomGrid from './bottomGrid'
+import React, { useRef } from "react";
+import TopStats from "./topStats";
+import MainGrid from "./mainGrid";
+import BottomGrid from "./bottomGrid";
 
 const MainContainer = () => {
-    return (
-        <div className='container'>
-            <TopStats />
-            <MainGrid />
-            <BottomGrid />
-        </div>
-    )
-}
+  // Ref for ErrorOverview inside MainGrid
+  const errorOverviewRef = useRef(null);
 
-export {MainContainer as default}
+  // Scroll function for TopStats
+  const scrollToErrorOverview = () => {
+    if (errorOverviewRef.current) {
+      errorOverviewRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  return (
+    <div className="container">
+      {/* Pass scroll function to TopStats */}
+      <TopStats scrollToErrorOverview={scrollToErrorOverview} />
+
+      {/* Pass ref to MainGrid */}
+      <MainGrid errorOverviewRef={errorOverviewRef} />
+
+      <BottomGrid />
+    </div>
+  );
+};
+
+export default MainContainer;

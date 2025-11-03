@@ -43,14 +43,38 @@ const RegisterPage = () => {
           textAlign: "left", // left-align inside box
         }}
       >
-        <h1 className="not-found-title">404</h1>
+        <h1 className="not-found-title">Register Account</h1>
         <p className="not-found-message">
-          Could not find a page at this address.
+          Please register in order to log in.
         </p>
 
-        <button onClick={goHome} className="button-login">
-          Go to Home Page
-        </button>
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className='login-input-group'>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div className='login-input-group'>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Enter your password"
+            />
+          </div>
+
+          <button className = 'button-login'type="submit">Register</button>
+        </form>
       </div>
     </div>
   );
