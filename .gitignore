@@ -1,17 +1,52 @@
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# Laravel & PHP
+/vendor/
+/node_modules/
+/public/storage
+/storage/*.key
+.env
+.phpunit.result.cache
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.cache
+composer.lock
+npm-debug.log
+yarn-error.log
 
-# Whether you use PnP or not, the node_modules folder is often used to store
-# build artifacts that should be gitignored
-node_modules
+# Laravel IDE Helper
+_ide_helper.php
+_ide_helper_models.php
 
-# Swap the comments on the following lines if you wish to use zero-installs
-# In that case, don't forget to run `yarn config set enableGlobalCache false`!
-# Documentation here: https://yarnpkg.com/features/caching#zero-installs
+# Laravel Telescope
+storage/telescope
 
-#!.yarn/cache
-.pnp.*
+# Laravel Horizon
+storage/horizon
+
+# Laravel Mix
+/public/mix-manifest.json
+/public/hot
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+/.idea/
+/*.sublime-project
+/*.sublime-workspace
+.vscode/
+
+# Logs
+*.log
+
+# Cache
+/storage/framework/cache/data
+/storage/framework/sessions
+/storage/framework/views
+/storage/logs
+
+# Backup files
+*.bak
+*.tmp
+*.swp
