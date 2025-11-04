@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../../../images/loginBackground.jpg';
+import backgroundImage from '../../images/loginBackground.jpg';
 import "../../css/styles.scss";
 
 const RegisterPage = () => {
