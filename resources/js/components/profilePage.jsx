@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../../../images/loginBackground.jpg';
-import profileImage from '../../../images/pfp.png';
+import backgroundImage from '../../images/loginBackground.jpg';
+import profileImage from '../../images/pfp.png';
 import "../../css/styles.scss";
 
 const ProfilePage = () => {
