@@ -1,17 +1,34 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../src/contexts/AuthContext';
 import "../../css/styles.scss";
 import backgroundImage from '../../images/loginBackground.jpg';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+    setError('');
+    setIsLoading(true);
+
+    try {
+      const result = await login({ email, password });
+      if (result.success) {
+        navigate('/dashboard'); // Redirect naar dashboard na succesvol inloggen
+      } else {
+        setError(result.error || 'Login mislukt. Controleer je gegevens.');
+      }
+    } catch (err) {
+      setError('Er is een probleem opgetreden. Probeer het later opnieuw.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const goHome = () => navigate('/register');
@@ -73,7 +90,10 @@ const LoginPage = () => {
             />
           </div>
 
-          <button className = 'button-login'type="submit">Sign in</button>
+          {error && <div className="error-message" style={{ color: '#ff6b6b', marginBottom: '10px' }}>{error}</div>}
+          <button className='button-login' type="submit" disabled={isLoading}>
+            {isLoading ? 'Signing in...' : 'Sign in'}
+          </button>
         </form>
 
         <p className="not-found-message">
