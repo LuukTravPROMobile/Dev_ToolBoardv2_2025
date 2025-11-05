@@ -1,20 +1,45 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../../../images/loginBackground.jpg';
+import backgroundImage from '../../images/loginBackground.jpg';
 import "../../css/styles.scss";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-  };
+    setError('');
+    setLoading(true);
 
-  const goHome = () => navigate('/');
+    try {
+      const response = await fetch('/api/register.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+      setLoading(false);
+
+      if (response.ok) {
+        console.log('User registered:', data);
+        // Navigate to login page or dashboard after successful registration
+        navigate('/login');
+      } else {
+        setError(data.message || 'Registration failed');
+      }
+    } catch (err) {
+      setLoading(false);
+      setError('Network error. Please try again.');
+      console.error('Fetch error:', err);
+    }
+  };
 
   return (
     <div
@@ -40,13 +65,15 @@ const RegisterPage = () => {
           color: "white",
           maxWidth: "400px",
           width: "100%",
-          textAlign: "left", // left-align inside box
+          textAlign: "left",
         }}
       >
         <h1 className="not-found-title">Register Account</h1>
         <p className="not-found-message">
           Please register in order to log in.
         </p>
+
+        {error && <p style={{ color: 'red' }}>{error}</p>}
 
         <form onSubmit={handleSubmit} className="login-form">
           <div className='login-input-group'>
@@ -73,7 +100,9 @@ const RegisterPage = () => {
             />
           </div>
 
-          <button className = 'button-login'type="submit">Register</button>
+          <button className='button-login' type="submit" disabled={loading}>
+            {loading ? 'Registering...' : 'Register'}
+          </button>
         </form>
       </div>
     </div>
