@@ -6,14 +6,14 @@
 }
         
 .card-title {
-    font-size: 1.3em;
+    font-size: 2.3em;
     font-weight: 600;
     margin-bottom: $eight;
     color: #1a1a1a;
 }
         
 .card-subtitle {
-    font-size: 0.9em;
+    font-size: 1.9em;
     color: $dashboard-gray;
     margin-bottom: $twenty-five;
 }
@@ -30,7 +30,7 @@
 }
         
 .error-stat-label {
-    font-size: 0.9em;
+    font-size: 1.9em;
     color: $dashboard-gray;
     margin-bottom: $eight;
 }
@@ -46,7 +46,7 @@
 }
         
 .error-list h4 {
-    font-size: 1em;
+    font-size: 2em;
     margin-bottom: 15px;
     color: $body-text-color;
 }
@@ -65,12 +65,13 @@
         
 .error-text {
     color: #333;
-    font-size: 0.95em;
+    font-size: 1.95em;
 }
         
 .error-count {
     font-weight: 600;
     color: $body-text-color;
+    font-size: 1.7em;
 }
 
 .recent-spacing {
