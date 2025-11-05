@@ -42,4 +42,9 @@ return [
         'web_url' => env('SENTRY_WEB_URL', 'https://sentry.io'),
     ],
 
+    'flare' => [
+    'api_token' => env('FLARE_API_TOKEN'),
+    'base_url' => 'https://flareapp.io',
+    ],
+
 ];
