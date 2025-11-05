@@ -1,18 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import '../../css/styles.scss'
-import ErrorOverview from './errorOverview'
-import RecentErrors from './recentErrors'
-import ComparisonCard from './comparisonCard'
+import React from "react";
+import "../../css/styles.scss";
+import ErrorOverview from "./errorOverview";
+import RecentErrors from "./recentErrors";
+import ComparisonCard from "./comparisonCard";
 
-const MainGrid = () => {
-    return (
-        <div>
-            <ErrorOverview />
-            <RecentErrors />
-            <ComparisonCard />
-        </div>
-    )
-}
+const MainGrid = ({ errorOverviewRef }) => {
+  return (
+    <div>
+      {/* Attach ref to ErrorOverview */}
+      <div ref={errorOverviewRef}>
+        <ErrorOverview />
+      </div>
 
-export {MainGrid as default}
+      <RecentErrors />
+      <ComparisonCard />
+    </div>
+  );
+};
+
+export default MainGrid;
