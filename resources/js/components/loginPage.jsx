@@ -38,40 +38,55 @@ const LoginPage = () => {
         <h1>Sign In</h1>
         <p>Please login to access your dashboard.</p>
 
-        <form onSubmit={handleSubmit}>
-          <div className="login-input-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Enter your email"
-            />
-          </div>
+        <form
+  className="login-form"
+  method="POST"
+  action="/login"
+  onSubmit={handleSubmit} // Keep your React handler
+>
+  {/* CSRF token (if needed, e.g., Laravel expects it) */}
+  <input type="hidden" name="_token" value={window.csrfToken || ""} />
 
-          <div className="login-input-group">
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter your password"
-            />
-          </div>
+  <div className="login-input-group">
+    <label htmlFor="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email" // <-- matches backend field
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+      placeholder="Enter your email"
+      className="input-field"
+    />
+  </div>
 
-          {error && <div className="error-message">{error}</div>}
+  <div className="login-input-group">
+    <label htmlFor="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password" // <-- matches backend field
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      required
+      placeholder="Enter your password"
+      className="input-field"
+    />
+  </div>
 
-          <button className = 'button-login' type="submit" disabled={isLoading}>
-            {isLoading ? "Signing in..." : "Sign in"}
-          </button>
-        </form>
+  {error && <div className="error-message">{error}</div>}
 
-        <p>No existing account? Register here:</p>
-        <button className='button-login' onClick={goHome}>Register Account</button>
+  <button className="button-login" type="submit" disabled={isLoading}>
+    {isLoading ? "Signing in..." : "Sign in"}
+  </button>
+</form>
+
+<p>No existing account? Register here:</p>
+<button className="button-login" onClick={goHome}>
+  Register Account
+</button>
+
       </div>
     </div>
   );
