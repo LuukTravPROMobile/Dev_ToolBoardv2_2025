@@ -1,31 +1,72 @@
 .overview-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 15px;
+  width: 100%;
+  box-sizing: border-box;
+
+  // Tablet (1 column)
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: $twenty;
+  }
+
+  // Mobile (1 column, tighter gap)
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: $ten;
+    padding: 0 10px; // ensures content doesn’t hit the screen edge
+  }
 }
-        
+
 .overview-item {
-    background: #f9f9f9;
-    padding: $twenty;
-    border-radius: $ten;
-    text-align: center;
-    font-size: 1.2em;
+  background: #f9f9f9;
+  padding: $twenty;
+  border-radius: $ten;
+  text-align: center;
+  font-size: 1.2em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100px; // prevents collapsing
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.1em;
+    padding: $ten $twenty;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1em;
+    padding: $ten;
+  }
 }
-        
+
 .overview-label {
-    font-size: 0.9em;
-    color: $dashboard-gray;
-    margin-bottom: 5px;
+  font-size: 0.9em;
+  color: $dashboard-gray;
+  margin-bottom: 5px;
+  word-wrap: break-word;
 }
-        
+
 .overview-value {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: $body-text-color;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: $body-text-color;
+  line-height: 1.2;
+
+  @media (max-width: 480px) {
+    font-size: 1.5em;
+  }
 }
-        
+
 .overview-subvalue {
-    font-size: 0.9em;
-    color: #999;
-    margin-top: 5px;
+  font-size: 0.9em;
+  color: #999;
+  margin-top: 5px;
+  line-height: 1.2;
 }

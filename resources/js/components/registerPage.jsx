@@ -69,7 +69,7 @@ const RegisterPage = () => {
         }}
       >
         <h1 className="not-found-title">Register Account</h1>
-        <p className="not-found-message">
+        <p className="login-text">
           Please register in order to log in.
         </p>
 
@@ -77,7 +77,7 @@ const RegisterPage = () => {
 
         <form onSubmit={handleSubmit} className="login-form">
           <div className='login-input-group'>
-            <label htmlFor="email">Email:</label>
+            <label className='login-text' htmlFor="email">Email:</label>
             <input
               type="email"
               id="email"
@@ -89,7 +89,7 @@ const RegisterPage = () => {
           </div>
 
           <div className='login-input-group'>
-            <label htmlFor="password">Password:</label>
+            <label className='login-text' htmlFor="password">Password:</label>
             <input
               type="password"
               id="password"

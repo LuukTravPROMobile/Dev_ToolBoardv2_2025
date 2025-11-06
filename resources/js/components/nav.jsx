@@ -28,7 +28,7 @@ const NavBar = () => {
       <div className="navbar-left">
         <div className="logo">
           <img src={travproLogo} alt="TravPRO Logo" className="logo-image" />
-          <span>TravPRO</span>
+          <span className='logo-text'>TravPRO</span>
         </div>
         <Link to='/' className='link-title'>Developer Dashboard</Link>
       </div>

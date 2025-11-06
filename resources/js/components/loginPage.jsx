@@ -36,7 +36,7 @@ const LoginPage = () => {
     >
       <div className="login-box">
         <h1>Sign In</h1>
-        <p>Please login to access your dashboard.</p>
+        <p className='login-text'>Please login to access your dashboard.</p>
 
         <form
   className="login-form"
@@ -48,7 +48,7 @@ const LoginPage = () => {
   <input type="hidden" name="_token" value={window.csrfToken || ""} />
 
   <div className="login-input-group">
-    <label htmlFor="email">Email:</label>
+    <label className='login-text' htmlFor="email">Email:</label>
     <input
       type="email"
       id="email"
@@ -62,7 +62,7 @@ const LoginPage = () => {
   </div>
 
   <div className="login-input-group">
-    <label htmlFor="password">Password:</label>
+    <label className='login-text' htmlFor="password">Password:</label>
     <input
       type="password"
       id="password"
@@ -82,7 +82,7 @@ const LoginPage = () => {
   </button>
 </form>
 
-<p>No existing account? Register here:</p>
+<p className = 'login-text'>No existing account? Register here:</p>
 <button className="button-login" onClick={goHome}>
   Register Account
 </button>

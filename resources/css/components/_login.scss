@@ -32,7 +32,7 @@
     padding: $twelve $twenty;
     border: none;
     border-radius: $eight;
-    font-size: 1.5em;
+    font-size: 1.9em;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
@@ -90,4 +90,9 @@
   max-width: 400px;
   width: 100%;
   text-align: left;
+}
+
+.login-text {
+    font-size: 1.4em;
+    color: #ffffff;
 }
