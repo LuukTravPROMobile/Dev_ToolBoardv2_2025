@@ -89,7 +89,7 @@
     color: $pretty-white;
 
     &:hover {
-      background-color: $comparison-orange;
+      background-color: darken($comparison-orange, 10%);
     }
   }
 }
@@ -131,6 +131,6 @@
   text-decoration: none;
 
   &:hover {
-    color: $comparison-orange
+    color: darken($comparison-orange, 20%);
   }
 }
