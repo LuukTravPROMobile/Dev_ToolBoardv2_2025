@@ -1,10 +1,6 @@
-/* Overlay */
 .ReactModal__Overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   display: flex;
@@ -14,16 +10,16 @@
   transition: opacity 250ms ease-in-out;
   z-index: 1000;
 
-  &--after-open {
+  &.ReactModal__Overlay--after-open {
     opacity: 1;
   }
 
-  &--before-close {
+  &.ReactModal__Overlay--before-close {
     opacity: 0;
   }
 }
 
-/* Modal content */
+/* ===== Modal Content ===== */
 .ReactModal__Content {
   background: #ffffff;
   color: #333;
@@ -38,18 +34,17 @@
   outline: none;
   z-index: 1001;
 
-  &--after-open {
+  &.ReactModal__Content--after-open {
     transform: translateY(0);
     opacity: 1;
   }
 
-  &--before-close {
+  &.ReactModal__Content--before-close {
     transform: translateY(-10px);
     opacity: 0;
   }
 }
 
-/* Inner content */
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -76,13 +71,33 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
+  transition: background 0.2s ease-in-out, transform 0.15s;
 
   &:hover {
     background: linear-gradient(135deg, #b93e12, #c94d0f);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   &:focus {
     outline: 2px solid #ff7323;
     outline-offset: 3px;
+  }
+}
+
+.link-white {
+  background: linear-gradient(135deg, #0078ff, #3399ff);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(135deg, #0064d4, #2688ff);
   }
 }

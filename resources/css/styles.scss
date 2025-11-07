@@ -10,3 +10,7 @@
 @import './base/responsiveness';
 @import './components/modal.scss';
 @import './components/login.scss';
+
+body {
+  padding-top: 100px;
+}

@@ -8,21 +8,23 @@ if (typeof document !== "undefined") {
 }
 
 const LoginModal = ({ isOpen, onClose }) => (
-<Modal
+  <Modal
     isOpen={isOpen}
     onRequestClose={onClose}
+    closeTimeoutMS={300} // Important for fade-out timing
     contentLabel="Login Modal"
     className="ReactModal__Content"
     overlayClassName="ReactModal__Overlay"
->
+  >
     <div className="modal-content">
-        <h3 className="modal__title">Login</h3>
-        <p>Login to acces TravPRO Mobile's company dashboard</p>
-        <Link to="/login" className='link-white' onClick={onClose}>Login</Link>
-        <button className="btn-close" onClick={onClose}>Close</button>
+      <h3 className="modal__title">Login</h3>
+      <p>Login to access TravPRO Mobile's company dashboard</p>
+      <Link to="/login" className="link-white" onClick={onClose}>
+        Login
+      </Link>
+      <button className="btn-close" onClick={onClose}>Close</button>
     </div>
-</Modal>
-
+  </Modal>
 );
 
-export {LoginModal as default};
+export { LoginModal as default };

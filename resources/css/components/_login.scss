@@ -1,20 +1,20 @@
 .page-container {
   min-height: 100vh;
   display: flex;
-  justify-content: flex-start; /* Align children to the left */
-  align-items: flex-start;     /* Align children to the top */
+  justify-content: flex-start; 
+  align-items: flex-start;    
   background-image: url('/path/to/your/image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 60px; 
-  text-align: left; /* still good for text inside children */
-  padding-left: 20px; /* optional: give some horizontal padding */
+  text-align: left;
+  padding-left: 20px;
 }
 
 
 .not-found-page {
-  background: rgba(0, 0, 0, 0.5); // optional: overlay to make text readable
+  background: rgba(0, 0, 0, 0.5);
   padding: 40px;
   border-radius: 10px;
   text-align: center;
@@ -32,7 +32,7 @@
     padding: $twelve $twenty;
     border: none;
     border-radius: $eight;
-    font-size: 1.5em;
+    font-size: 1.9em;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
@@ -64,4 +64,34 @@
         border-radius: $eight;
         font-size: 1em;
     }
+}
+
+.page-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+
+  &.with-background {
+    background-image: var(--background-image);
+  }
+}
+
+.login-box {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+}
+
+.login-text {
+    font-size: 1.4em;
+    color: #ffffff;
 }

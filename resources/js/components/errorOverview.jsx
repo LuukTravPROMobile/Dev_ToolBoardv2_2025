@@ -3,7 +3,7 @@ import "../../css/styles.scss";
 
 const ErrorOverview = () => {
     return (
-        <div className="card">
+        <div className="card" id='error-overview'>
             <h2 className="card-title">Error Overview</h2>
             <p className="card-subtitle">(Sentry + Flare logs)</p>
                 

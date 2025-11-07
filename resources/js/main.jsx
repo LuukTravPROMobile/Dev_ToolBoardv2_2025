@@ -1,26 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../css/styles.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Components
 import NavBar from './components/nav';
 import MainContainer from './components/mainContainer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFoundPage from './components/notFoundPage';
 import LoginPage from './components/loginPage';
-import RegisterPage from './components/registerPage.jsx';
-import ProfilePage from './components/profilePage.jsx';
+import RegisterPage from './components/registerPage';
+import ProfilePage from './components/profilePage';
+
+// Auth Context
+import { AuthProvider } from './authContext'; // ✅ Make sure this path is correct!
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<MainContainer />} />
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<MainContainer />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
@@ -30,4 +37,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 );
 
-export {App as default}; 
+export default App;
