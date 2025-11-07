@@ -4,8 +4,6 @@
     padding: $thirty $fourty;
 }
 
-// Voor Bottom Grid:
-
 .bottom-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -13,24 +11,20 @@
     margin-top: $thirty;
 }
 
-// Voor Ticket Tracker:
-
 .table-container {
     overflow-x: auto;
     font-size: 1.4em;
 }
 
-// Voor Alternatieve Pagina's:
-
 .page-container {
   display: flex;
-  flex-direction: column;   // stack children vertically
-  justify-content: center;  // center vertically
-  align-items: center;      // center horizontally
-  min-height: 100vh;        // fill full viewport height
-  text-align: center;       // center text inside children
-  padding: 1rem;            // optional padding for spacing
-  box-sizing: border-box;   // include padding in width/height
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .profile-container {

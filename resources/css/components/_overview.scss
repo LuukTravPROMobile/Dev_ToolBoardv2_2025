@@ -4,19 +4,6 @@
   gap: 15px;
   width: 100%;
   box-sizing: border-box;
-
-  // Tablet (1 column)
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    gap: $twenty;
-  }
-
-  // Mobile (1 column, tighter gap)
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    gap: $ten;
-    padding: 0 10px; // ensures content doesn’t hit the screen edge
-  }
 }
 
 .overview-item {
@@ -28,21 +15,11 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100px; // prevents collapsing
+  min-height: 100px;
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.1em;
-    padding: $ten $twenty;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1em;
-    padding: $ten;
   }
 }
 
@@ -58,10 +35,6 @@
   font-weight: 700;
   color: $body-text-color;
   line-height: 1.2;
-
-  @media (max-width: 480px) {
-    font-size: 1.5em;
-  }
 }
 
 .overview-subvalue {

@@ -1,0 +1,44 @@
+.top-stats {
+     @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $twenty;
+  }
+
+  // Mobile layout — 2 columns per row, tighter spacing
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $ten;
+  }
+
+  // Extra small screens — fallback to 1 column
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card,
+button.stat-card-btn {
+  @media (max-width: 768px) {
+    padding: $twenty;
+    min-height: 100px;
+  }
+
+  @media (max-width: 480px) {
+    padding: $ten;
+    min-height: 90px;
+  }
+}
+
+.stat-card .stat-label,
+button.stat-card-btn .stat-label {
+  @media (max-width: 480px) {
+    font-size: 1.2em;
+  }
+}
+
+.stat-card .stat-value,
+button.stat-card-btn .stat-value {
+  @media (max-width: 480px) {
+    font-size: 1.4em;
+  }
+}

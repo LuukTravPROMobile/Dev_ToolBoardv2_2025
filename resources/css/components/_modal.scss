@@ -1,7 +1,6 @@
-/* ===== Overlay ===== */
 .ReactModal__Overlay {
   position: fixed;
-  inset: 0; /* shorthand for top, right, bottom, left */
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   display: flex;
@@ -11,7 +10,6 @@
   transition: opacity 250ms ease-in-out;
   z-index: 1000;
 
-  /* React Modal adds these classes dynamically */
   &.ReactModal__Overlay--after-open {
     opacity: 1;
   }
@@ -47,7 +45,6 @@
   }
 }
 
-/* ===== Inner Content ===== */
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -66,7 +63,6 @@
   margin-top: 1.5rem;
 }
 
-/* ===== Buttons ===== */
 .btn-close {
   background: linear-gradient(135deg, #d44e1dff, #de6114ff);
   color: #fff;
@@ -92,7 +88,6 @@
   }
 }
 
-/* ===== Optional Link Styling (if used in modal) ===== */
 .link-white {
   background: linear-gradient(135deg, #0078ff, #3399ff);
   color: white;

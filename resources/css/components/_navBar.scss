@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px $ten rgba(0,0,0,0.1);
-  flex-wrap: wrap; // helps on smaller screens
+  flex-wrap: wrap;
 }
 
 .navbar-left {
@@ -126,74 +126,5 @@
 
   &:hover {
     color: #df7a3f;
-  }
-}
-
-/* 🔽 RESPONSIVE BREAKPOINTS 🔽 */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 15px $twenty;
-  }
-
-  .logo-text {
-    font-size: 1.4em;
-  }
-
-  .navbar-title {
-    font-size: 1.1em;
-  }
-
-  .nav-badge {
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .navbar-left {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .navbar-right {
-    flex-wrap: wrap;
-    gap: $ten;
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .dropdown-login {
-    font-size: 1.2em;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-text {
-    font-size: 1.2em;
-  }
-
-  .logo-icon {
-    width: 2.6rem;
-    height: 2.6rem;
-  }
-
-  .nav-badge {
-    font-size: 1.1em;
-    padding: 6px $twelve;
-  }
-
-  .link-title {
-    font-size: 1.2em;
-  }
-
-  .navbar {
-    padding: $ten;
   }
 }

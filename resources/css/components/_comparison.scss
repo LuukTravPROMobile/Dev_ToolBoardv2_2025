@@ -1,13 +1,13 @@
 .comparison-section {
   margin-top: $twenty-five;
-  padding: 0 $ten; // Add some padding for small screens
+  padding: 0 $ten;
 }
 
 .comparison-title {
   font-size: 2.1em;
   font-weight: 600;
   margin-bottom: $eight;
-  text-align: center; // looks better on smaller devices
+  text-align: center;
 }
 
 .comparison-subtitle {
@@ -36,67 +36,4 @@
   text-align: right;
   font-weight: 600;
   color: $comparison-orange;
-}
-
-/* ----------------------- */
-/* 📱 Responsive Adjustments */
-/* ----------------------- */
-
-/* Medium screens (tablets) */
-@media (max-width: 1024px) {
-  .comparison-title {
-    font-size: 1.9em;
-  }
-
-  .comparison-subtitle {
-    font-size: 1.6em;
-  }
-
-  .chart-container {
-    height: 130px;
-  }
-}
-
-/* Small screens (phones) */
-@media (max-width: 768px) {
-  .comparison-section {
-    margin-top: 15px; // smaller top margin
-  }
-
-  .comparison-title {
-    font-size: 1.7em;
-  }
-
-  .comparison-subtitle {
-    font-size: 1.4em;
-  }
-
-  .chart-container {
-    height: 110px;
-    margin-bottom: $eight;
-  }
-
-  .chart-percentage {
-    text-align: center;
-    font-size: 0.95em;
-  }
-}
-
-/* Extra small screens (narrow phones) */
-@media (max-width: 480px) {
-  .comparison-title {
-    font-size: 1.5em;
-  }
-
-  .comparison-subtitle {
-    font-size: 1.2em;
-  }
-
-  .chart-container {
-    height: 90px;
-  }
-
-  .chart-percentage {
-    font-size: 0.9em;
-  }
 }
