@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import LoginModal from './modal';
 import { Link } from 'react-router-dom';
 import "../../css/styles.scss";
+import travproLogo from '../../images/travpro.jpg';
 
 const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,8 +27,8 @@ const NavBar = () => {
     <div className="navbar">
       <div className="navbar-left">
         <div className="logo">
-          <div className="logo-icon"></div>
-          <span>TravPRO</span>
+          <img src={travproLogo} alt="TravPRO Logo" className="logo-image" />
+          <span className='logo-text'>TravPRO</span>
         </div>
         <Link to='/' className='link-title'>Developer Dashboard</Link>
       </div>

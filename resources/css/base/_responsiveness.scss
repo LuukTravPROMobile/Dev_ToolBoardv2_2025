@@ -1,32 +1,5 @@
-@media (max-width: 1200px) {
-    .main-grid, .bottom-grid {
-        grid-template-columns: 1fr;
-    }
-            
-    .top-stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-        
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px $twenty;
-    }
-            
-    .container {
-        padding: $twenty;
-    }
-            
-    .top-stats {
-        grid-template-columns: 1fr;
-    }
-            
-    .error-stats {
-        flex-direction: column;
-        gap: $twenty;
-    }
-            
-    .overview-grid {
-        grid-template-columns: 1fr;
-    }
-}
+@import '../responsiveness/topStatsResponse.scss';
+@import '../responsiveness/navBarResponse.scss';
+@import '../responsiveness/overviewResponse.scss';
+@import '../responsiveness/comparisonResponse.scss';
+@import '../responsiveness/generalResponse.scss';

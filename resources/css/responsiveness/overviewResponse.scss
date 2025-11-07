@@ -1,0 +1,30 @@
+.overview-value {
+  @media (max-width: 480px) {
+    font-size: 1.5em;
+  }
+}
+
+.overview-grid {
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: $twenty;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: $ten;
+    padding: 0 10px;
+  }
+}
+
+.overview-item {
+  @media (max-width: 768px) {
+    font-size: 1.1em;
+    padding: $ten $twenty;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1em;
+    padding: $ten;
+  }
+}

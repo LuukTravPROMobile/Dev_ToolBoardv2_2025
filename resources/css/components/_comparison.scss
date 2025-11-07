@@ -1,33 +1,39 @@
 .comparison-section {
-    margin-top: $twenty-five;
+  margin-top: $twenty-five;
+  padding: 0 $ten;
 }
-        
+
 .comparison-title {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-bottom: $eight;
+  font-size: 2.1em;
+  font-weight: 600;
+  margin-bottom: $eight;
+  text-align: center;
 }
-        
+
 .comparison-subtitle {
-    font-size: 0.85em;
-    color: $dashboard-gray;
-    margin-bottom: $twenty;
+  font-size: 1.85em;
+  color: $dashboard-gray;
+  margin-bottom: $twenty;
+  text-align: center;
 }
-        
+
 .chart-container {
-    position: relative;
-    height: 150px;
-    margin-bottom: $ten;
+  position: relative;
+  height: 150px;
+  margin-bottom: $ten;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-        
+
 .line-chart {
-    width: 100%;
-    height: 100%;
-    color: $comparison-orange;
+  width: 100%;
+  height: 100%;
+  color: $comparison-orange;
 }
-        
+
 .chart-percentage {
-    text-align: right;
-    font-weight: 600;
-    color: $comparison-orange;
+  text-align: right;
+  font-weight: 600;
+  color: $comparison-orange;
 }
