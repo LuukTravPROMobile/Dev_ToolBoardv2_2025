@@ -1,11 +1,17 @@
 .navbar {
-  background: linear-gradient(135deg, #d44e1dff 0%, #de6114ff 100%);
+  background: linear-gradient(135deg, $comparison-orange 0%, $comparison-orange 100%);
   padding: $twenty $fourty;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px $ten rgba(0,0,0,0.1);
+  box-shadow: $zero 2px $ten rgba(0,0,0,0.1);
   flex-wrap: wrap;
+  position: fixed;
+  top: $zero;
+  left: $zero;
+  width: 100%;
+  z-index: 1000;
+  margin-bottom: 80px;
 }
 
 .navbar-left {
@@ -15,9 +21,9 @@
 }
 
 .navbar-title {
-  color: white;
+  color: $pretty-white;
   font-size: 1.3em;
-  font-weight: 500;
+  font-weight: $font-weight-five;
 }
 
 .navbar-right {
@@ -27,27 +33,27 @@
 }
 
 .nav-badge {
-  background: white;
-  color: #ff6b35;
+  background: $pretty-white;
+  color: $comparison-orange;
   padding: $eight 1.6rem;
   border-radius: $twenty;
-  font-weight: 600;
+  font-weight: $font-weight-six;
   font-size: 1.4em;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: white;
-  font-size: 1.5em;
-  font-weight: 600;
+  gap: $ten;
+  color: $pretty-white;
+  font-size: $fifteen;
+  font-weight: $font-weight-six;
 }
 
 .logo-icon {
   width: 3.2rem;
   height: 3.2rem;
-  background: white;
+  background: $pretty-white;
   border-radius: 0.6rem;
   display: flex;
   align-items: center;
@@ -62,10 +68,10 @@
 
 .dropdown-menu {
   position: absolute;
-  right: 0;
+  right: $zero;
   top: 100%;
-  background: #dc5d15;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: $comparison-orange;
+  box-shadow: $zero 4px 6px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   min-width: 150px;
@@ -73,29 +79,29 @@
   border-radius: 5px;
 
   button, a {
-    padding: 10px 15px;
+    padding: $ten $fifteen;
     border: none;
     background: none;
     text-align: left;
     cursor: pointer;
     width: 100%;
     text-decoration: none;
-    color: white;
+    color: $pretty-white;
 
     &:hover {
-      background-color: #df7a3f;
+      background-color: $comparison-orange;
     }
   }
 }
 
 .dropdown-login {
-  background-color: #dc5d15;
-  color: white;
+  background-color: $comparison-orange;
+  color: $pretty-white;
   padding: $twelve $twenty;
   border: none;
   border-radius: $eight;
-  font-size: 1.5em;
-  font-weight: 600;
+  font-size: $fifteen;
+  font-weight: $font-weight-six;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
@@ -103,28 +109,28 @@
   text-align: left;
 
   &:hover {
-    background-color: darken(#dc5d15, 10%);
+    background-color: darken($comparison-orange, 10%);
   }
 }
 
 .logo-image {
   height: 50px;
   width: auto;
-  border-radius: 10px;
+  border-radius: $ten;
 }
 
 .logo-text {
   font-size: 1.8em;
-  font-weight: 700;
+  font-weight: $font-weight-seven;
 }
 
 .link-title {
-  color: white;
-  font-size: 1.5em;
-  font-weight: 600;
+  color: $pretty-white;
+  font-size: $fifteen;
+  font-weight: $font-weight-six;
   text-decoration: none;
 
   &:hover {
-    color: #df7a3f;
+    color: $comparison-orange
   }
 }

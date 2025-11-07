@@ -1,12 +1,12 @@
 .ReactModal__Overlay {
   position: fixed;
-  inset: 0;
+  inset: $zero;
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
+  opacity: $zero;
   transition: opacity 250ms ease-in-out;
   z-index: 1000;
 
@@ -15,21 +15,20 @@
   }
 
   &.ReactModal__Overlay--before-close {
-    opacity: 0;
+    opacity: $zero;
   }
 }
 
-/* ===== Modal Content ===== */
 .ReactModal__Content {
-  background: #ffffff;
+  background: $pretty-white;
   color: #333;
-  border-radius: 10px;
-  padding: 2rem 2.5rem;
+  border-radius: $ten;
+  padding: $twenty $twenty-five;
   max-width: 400px;
   width: 90%;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 $eight $thirty rgba(0, 0, 0, 0.2);
   transform: translateY(-10px);
-  opacity: 0;
+  opacity: $zero;
   transition: all 250ms ease-in-out;
   outline: none;
   z-index: 1001;
@@ -41,40 +40,40 @@
 
   &.ReactModal__Content--before-close {
     transform: translateY(-10px);
-    opacity: 0;
+    opacity: $zero;
   }
 }
 
 .modal-content {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: $ten;
   text-align: center;
 }
 
 .modal__title {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: $font-weight-six;
   margin-bottom: 0.5rem;
   color: #222;
 }
 
 .modal-actions {
-  margin-top: 1.5rem;
+  margin-top: $fifteen;
 }
 
 .btn-close {
-  background: linear-gradient(135deg, #d44e1dff, #de6114ff);
-  color: #fff;
+  background: linear-gradient(135deg, #d44e1dff, $comparison-orange);
+  color: $pretty-white;
   border: none;
   padding: 0.6rem 1.4rem;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: $ten;
   transition: background 0.2s ease-in-out, transform 0.15s;
 
   &:hover {
-    background: linear-gradient(135deg, #b93e12, #c94d0f);
+    background: linear-gradient(135deg, #b93e12, $comparison-orange);
     transform: translateY(-1px);
   }
 
@@ -83,15 +82,15 @@
   }
 
   &:focus {
-    outline: 2px solid #ff7323;
+    outline: 2px solid $comparison-orange;
     outline-offset: 3px;
   }
 }
 
 .link-white {
   background: linear-gradient(135deg, #0078ff, #3399ff);
-  color: white;
-  padding: 0.6rem 1.2rem;
+  color: $pretty-white;
+  padding: 0.6rem $twelve;
   border-radius: 6px;
   text-decoration: none;
   display: inline-block;

@@ -2,16 +2,24 @@
 $background-blue: #1b5198ff;
 $body-text-color: #1a1a1a;
 $dashboard-gray: #666;
-$comparison-orange: #b94310ff;
+$comparison-orange: rgb(231, 82, 19);
+$pretty-white: #f9f9f9;
 
-// Sizes (rem)
-$eight: 0.8rem;
-$ten: 1rem;
-$twelve: 1.2rem;
-$twenty: 2rem;
-$twenty-five: 2.5rem;
-$thirty: 3rem;
-$fourty: 4rem;
+// Sizes
+// Veranderd van Rem naar Px voor consistentie op andere mensen hun browser instellingen
+$eight: 8px;
+$ten: 10px;
+$twelve: 12px;
+$fifteen: 15px;
+$twenty: 20px;
+$twenty-five: 25px;
+$thirty: 30px;
+$fourty: 40px;
 
 // Numbers
 $zero: 0;
+
+// Font Weights
+$font-weight-six: 600;
+$font-weight-seven: 700;
+$font-weight-five: 500;

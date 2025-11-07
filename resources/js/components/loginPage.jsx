@@ -42,7 +42,7 @@ const LoginPage = () => {
   className="login-form"
   method="POST"
   action="/login"
-  onSubmit={handleSubmit} // Keep your React handler
+  onSubmit={handleSubmit}
 >
   {/* CSRF token (if needed, e.g., Laravel expects it) */}
   <input type="hidden" name="_token" value={window.csrfToken || ""} />
@@ -52,7 +52,7 @@ const LoginPage = () => {
     <input
       type="email"
       id="email"
-      name="email" // <-- matches backend field
+      name="email"
       value={email}
       onChange={(e) => setEmail(e.target.value)}
       required
@@ -66,7 +66,7 @@ const LoginPage = () => {
     <input
       type="password"
       id="password"
-      name="password" // <-- matches backend field
+      name="password"
       value={password}
       onChange={(e) => setPassword(e.target.value)}
       required

@@ -1,13 +1,13 @@
 .card {
-    background: white;
+    background: $pretty-white;
     padding: $thirty;
     border-radius: $twelve;
-    box-shadow: 0 2px $eight rgba(0,0,0,0.08);
+    box-shadow: $zero 2px $eight rgba(0,0,0,0.08);
 }
         
 .card-title {
     font-size: 2.3em;
-    font-weight: 600;
+    font-weight: $font-weight-six;
     margin-bottom: $eight;
     color: #1a1a1a;
 }
@@ -36,7 +36,7 @@
         
 .error-stat-value {
     font-size: 2.5em;
-    font-weight: 700;
+    font-weight: $font-weight-seven;
     color: $body-text-color;
 }
         
@@ -46,7 +46,7 @@
         
 .error-list h4 {
     font-size: 2em;
-    margin-bottom: 15px;
+    margin-bottom: $fifteen;
     color: $body-text-color;
 }
         
@@ -55,7 +55,7 @@
     justify-content: space-between;
     align-items: center;
     padding: $twelve $zero;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid $pretty-white;
 }
         
 .error-item:last-child {
@@ -68,7 +68,7 @@
 }
         
 .error-count {
-    font-weight: 600;
+    font-weight: $font-weight-six;
     color: $body-text-color;
     font-size: 1.7em;
 }
