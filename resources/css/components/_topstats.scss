@@ -27,7 +27,7 @@ button.stat-card-btn {
   &:hover {
     transform: translateY(-2px);
     box-shadow: $zero 4px $eight rgba(0, 0, 0, 0.12);
-    background-color: gray;
+    background-color: darken($pretty-white, 20%);
   }
 }
 

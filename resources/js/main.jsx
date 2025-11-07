@@ -12,8 +12,7 @@ import RegisterPage from './components/registerPage';
 import ProfilePage from './components/profilePage';
 
 // Auth Context
-import { AuthProvider } from './authContext'; // ✅ Make sure this path is correct!
-
+import { AuthProvider } from './authContext';
 function App() {
   return (
     <AuthProvider>

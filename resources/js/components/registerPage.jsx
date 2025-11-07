@@ -77,6 +77,7 @@ const RegisterPage = () => {
               placeholder="Enter your email"
             />
           </div>
+          
 
           <div className='login-input-group'>
             <label className='login-text' htmlFor="password">Password:</label>
