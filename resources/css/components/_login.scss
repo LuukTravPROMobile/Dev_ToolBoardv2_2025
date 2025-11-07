@@ -9,31 +9,31 @@
   background-repeat: no-repeat;
   padding-top: 60px; 
   text-align: left;
-  padding-left: 20px;
+  padding-left: $twenty;
 }
 
 
 .not-found-page {
   background: rgba(0, 0, 0, 0.5);
   padding: 40px;
-  border-radius: 10px;
+  border-radius: $ten;
   text-align: center;
-  color: white;
+  color: $pretty-white;
 }
 
 .not-found-message {
-    font-size: 1.2em;
+    font-size: $twelve;
     margin-top: $twenty;
 }
 
 .button-login {
-    background-color: #ff6b35;
-    color: white;
+    background-color: $comparison-orange;
+    color: $pretty-white;
     padding: $twelve $twenty;
     border: none;
     border-radius: $eight;
     font-size: 1.9em;
-    font-weight: 600;
+    font-weight: $font-weight-six;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
@@ -53,8 +53,8 @@
     label {
         display: block;
         margin-bottom: $eight;
-        font-weight: 500;
-        color: #ffffff;
+        font-weight: $font-weight-five;
+        color: $pretty-white;
     }
 
     input {
@@ -62,7 +62,7 @@
         padding: $twelve;
         border: none;
         border-radius: $eight;
-        font-size: 1em;
+        font-size: $ten;
     }
 }
 
@@ -84,8 +84,8 @@
 .login-box {
   background: rgba(0, 0, 0, 0.5);
   padding: 40px;
-  border-radius: 10px;
-  color: white;
+  border-radius: $ten;
+  color: $pretty-white;
   max-width: 400px;
   width: 100%;
   text-align: left;
@@ -93,5 +93,5 @@
 
 .login-text {
     font-size: 1.4em;
-    color: #ffffff;
+    color: $pretty-white;
 }

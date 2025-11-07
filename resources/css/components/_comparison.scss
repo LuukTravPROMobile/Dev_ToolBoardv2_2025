@@ -1,11 +1,11 @@
 .comparison-section {
   margin-top: $twenty-five;
-  padding: 0 $ten;
+  padding: $zero $ten;
 }
 
 .comparison-title {
   font-size: 2.1em;
-  font-weight: 600;
+  font-weight: $font-weight-six;
   margin-bottom: $eight;
   text-align: center;
 }
@@ -34,6 +34,6 @@
 
 .chart-percentage {
   text-align: right;
-  font-weight: 600;
+  font-weight: $font-weight-six;
   color: $comparison-orange;
 }
