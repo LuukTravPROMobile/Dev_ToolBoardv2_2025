@@ -57,7 +57,7 @@ button.stat-card-btn {
   &:active {
     background: darken($pretty-white, 30%);
     box-shadow: $zero 4px $eight rgba(0, 0, 0, 0.1);
-    transform: none;
+    transform: translateY(-1px);
   }
 }
 
