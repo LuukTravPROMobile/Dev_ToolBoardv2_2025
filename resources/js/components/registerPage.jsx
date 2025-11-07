@@ -29,7 +29,6 @@ const RegisterPage = () => {
 
       if (response.ok) {
         console.log('User registered:', data);
-        // Navigate to login page or dashboard after successful registration
         navigate('/login');
       } else {
         setError(data.message || 'Registration failed');
@@ -58,15 +57,6 @@ const RegisterPage = () => {
     >
       <div
         className="not-found-page"
-        style={{
-          background: "rgba(0, 0, 0, 0.5)",
-          padding: "40px",
-          borderRadius: "10px",
-          color: "white",
-          maxWidth: "400px",
-          width: "100%",
-          textAlign: "left",
-        }}
       >
         <h1 className="not-found-title">Register Account</h1>
         <p className="login-text">

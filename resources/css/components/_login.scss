@@ -95,3 +95,13 @@
     font-size: 1.4em;
     color: $pretty-white;
 }
+
+.not-found-page {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: $ten;
+    color: $pretty-white;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
