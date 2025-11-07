@@ -16,27 +16,35 @@ const RegisterPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/register.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
+      const response = await fetch('http://127.0.0.1:8000/php/register.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
       });
-
       const data = await response.json();
-      setLoading(false);
+
+
+      try {
+        data = JSON.parse(text); // Attempt JSON parsing
+      } catch (err) {
+        console.error('Failed to parse JSON:', text);
+        setError('Server returned invalid response');
+        setLoading(false);
+        return;
+      }
 
       if (response.ok) {
         console.log('User registered:', data);
-        navigate('/login');
+        setLoading(false);
+        navigate('/login'); // Redirect to login
       } else {
         setError(data.message || 'Registration failed');
+        setLoading(false);
       }
     } catch (err) {
+      console.error('Network error:', err);
+      setError('Network error. Please check your server.');
       setLoading(false);
-      setError('Network error. Please try again.');
-      console.error('Fetch error:', err);
     }
   };
 
@@ -55,13 +63,9 @@ const RegisterPage = () => {
         paddingTop: "60px",
       }}
     >
-      <div
-        className="not-found-page"
-      >
+      <div className="not-found-page">
         <h1 className="not-found-title">Register Account</h1>
-        <p className="login-text">
-          Please register in order to log in.
-        </p>
+        <p className="login-text">Please register in order to log in.</p>
 
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
@@ -77,7 +81,6 @@ const RegisterPage = () => {
               placeholder="Enter your email"
             />
           </div>
-          
 
           <div className='login-input-group'>
             <label className='login-text' htmlFor="password">Password:</label>
@@ -100,4 +103,4 @@ const RegisterPage = () => {
   );
 };
 
-export { RegisterPage as default };
+export default RegisterPage;
