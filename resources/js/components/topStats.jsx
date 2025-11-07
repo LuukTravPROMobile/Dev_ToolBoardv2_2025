@@ -3,9 +3,46 @@ import "../../css/styles.scss";
 import GraduatesModal from "./modals/graduatesModal";
 import DropletModal from "./modals/dropletModal";
 
-const TopStats = ({ scrollToErrorOverview }) => {
+const TopStats = () => {
   const [isGraduatesModalOpen, setIsGraduatesModalOpen] = useState(false);
   const [isDropletModalOpen, setIsDropletModalOpen] = useState(false);
+
+  const scrollToErrorOverview = () => {
+    // ✅ Make sure the ID matches the element in your DOM
+    const element = document.getElementById("error-overview");
+    if (!element) {
+      console.warn("❗ No element with id='error-overview' found.");
+      return;
+    }
+
+    // ✅ Get the navbar height (if it's fixed)
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+    // ✅ If your main content scrolls inside a container, target it
+    const scrollContainer =
+      document.querySelector(".main-container") || window;
+
+    // Calculate where to scroll
+    const elementPosition =
+      element.getBoundingClientRect().top +
+      (scrollContainer === window ? window.scrollY : scrollContainer.scrollTop);
+
+    const offsetPosition = elementPosition - navbarHeight - 10;
+
+    // ✅ Scroll smoothly
+    if (scrollContainer === window) {
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    } else {
+      scrollContainer.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const scrollToBottom = () => {
     window.scrollTo({
@@ -16,7 +53,6 @@ const TopStats = ({ scrollToErrorOverview }) => {
 
   return (
     <div className="top-stats">
-      {/* Button to scroll to ErrorOverview in MainContainer */}
       <button className="stat-card-btn" onClick={scrollToErrorOverview}>
         <div className="stat-label">Sentry Errors</div>
         <div className="stat-value">
@@ -24,7 +60,6 @@ const TopStats = ({ scrollToErrorOverview }) => {
         </div>
       </button>
 
-      {/* Button to open GraduatesModal */}
       <button
         className="stat-card-btn"
         onClick={() => setIsGraduatesModalOpen(true)}
@@ -33,13 +68,11 @@ const TopStats = ({ scrollToErrorOverview }) => {
         <div className="stat-value">Open Tickets</div>
       </button>
 
-      {/* Button to scroll to bottom of the page */}
       <button className="stat-card-btn" onClick={scrollToBottom}>
         <div className="stat-label">Open Tickets</div>
         <div className="stat-value">Last Week</div>
       </button>
 
-      {/* Button to open DropletModal */}
       <button
         className="stat-card-btn"
         onClick={() => setIsDropletModalOpen(true)}
@@ -48,7 +81,6 @@ const TopStats = ({ scrollToErrorOverview }) => {
         <div className="stat-value">Active</div>
       </button>
 
-      {/* Modals */}
       <GraduatesModal
         isOpen={isGraduatesModalOpen}
         onClose={() => setIsGraduatesModalOpen(false)}
@@ -62,4 +94,4 @@ const TopStats = ({ scrollToErrorOverview }) => {
   );
 };
 
-export { TopStats as default };
+export default TopStats;
