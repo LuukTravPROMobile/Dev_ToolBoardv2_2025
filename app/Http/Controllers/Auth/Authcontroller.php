@@ -1,118 +1,98 @@
 <?php
-  
-namespace App\Http\Controllers\Auth;
-  
-use App\Http\Controllers\Controller;
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Session;
-use App\Models\User;
-use Hash;
-use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
-  
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+
 class AuthController extends Controller
 {
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function index(): View
-    {
-        return view('auth.login');
-    }  
-      
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function registration(): View
-    {
-        return view('auth.registration');
-    }
-      
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function postLogin(Request $request): RedirectResponse
+    public function register(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        Auth::login($user);
+
+        return response()->json([
+            'message' => 'Registratie succesvol',
+            'user' => $user
+        ], 201);
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
             'password' => 'required',
         ]);
-   
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-                        ->withSuccess('You have Successfully loggedin');
-        }
-  
-        return redirect("login")->withError('Oppes! You have entered invalid credentials');
-    }
-      
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function postRegistration(Request $request): RedirectResponse
-    {  
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-        ]);
-           
-        $data = $request->all();
-        $user = $this->create($data);
-            
-        Auth::login($user); 
 
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
-    }
-    
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return view('dashboard');
+        if (!Auth::attempt($request->only('email', 'password'))) {
+            throw ValidationException::withMessages([
+                'email' => ['De inloggegevens zijn onjuist.'],
+            ]);
         }
-  
-        return redirect("login")->withSuccess('Opps! You do not have access');
+
+        $request->session()->regenerate();
+
+        return response()->json([
+            'message' => 'Inloggen succesvol',
+            'user' => Auth::user()
+        ]);
     }
-    
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function create(array $data)
+
+    public function logout(Request $request)
     {
-      return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password'])
-      ]);
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return response()->json([
+            'message' => 'Uitloggen succesvol'
+        ]);
     }
-    
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function logout(): RedirectResponse
+
+    public function user(Request $request)
     {
-        Session::flush();
-        Auth::logout();
+        return response()->json($request->user());
+    }
+
+    // Registratie methode
+    public function RegisterPage(Request $request)
+    {
+        // Valideer de inkomende request data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
   
-        return Redirect('login');
+        // Maak een nieuwe gebruiker aan
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+  
+        // Log de gebruiker in
+        Auth::login($user);
+  
+        // Retourneer een succesvolle response
+        return response()->json([
+            'message' => 'Registratie succesvol',
+            'user' => $user
+        ], 201);
     }
 }

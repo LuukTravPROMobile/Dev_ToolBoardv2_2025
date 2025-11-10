@@ -1,9 +1,23 @@
-
 {
   "name": "travpro-dashboard",
   "version": "1.0.0",
   "private": true,
+  "description": "",
+  "homepage": "https://github.com/LuukTravPROMobile/Dev_ToolBoardv2_2025#readme",
+  "bugs": {
+    "url": "https://github.com/LuukTravPROMobile/Dev_ToolBoardv2_2025/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuukTravPROMobile/Dev_ToolBoardv2_2025.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "postcss.config.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,6 +27,7 @@
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "axios": "^1.6.0",
+    "bcryptjs": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.3",
