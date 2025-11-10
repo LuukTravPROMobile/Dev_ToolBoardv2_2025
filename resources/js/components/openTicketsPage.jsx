@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../../images/loginBackground.jpg';
 import "../../css/styles.scss";
 
-const RegisterPage = () => {
+const OpenTicketsPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -18,14 +18,16 @@ const RegisterPage = () => {
 
   return (
     <div
-      className="page-container"
+      className="ticket-container"
       style={{
-        backgroundImage: `url(${backgroundImage})`}}
+        backgroundImage: `url(${backgroundImage})`
+      }}
     >
-      <div className="not-found-page">
-        <h1 className="not-found-title">404</h1>
+      <div
+        className="ticket-page">
+        <h1 className="not-found-title">Open Tickets</h1>
         <p className="not-found-message">
-          Could not find a page at this address.
+            Here you can view and manage your open tickets.
         </p>
 
         <button onClick={goHome} className="button-login">
@@ -36,4 +38,4 @@ const RegisterPage = () => {
   );
 };
 
-export { RegisterPage as default };
+export { OpenTicketsPage as default };

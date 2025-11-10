@@ -18,7 +18,7 @@ const GraduatesModal = ({ isOpen, onClose }) => (
     <div className="modal-content">
       <h3 className="modal__title">Graduates</h3>
       <p>Details about all of the graduates go here.</p>
-      <Link to="/login" className="link-white">Login</Link>
+      <Link to="/opentickets" className="link-white">Open Tickets</Link>
       <button className="btn-close" onClick={onClose}>Close</button>
     </div>
   </Modal>
