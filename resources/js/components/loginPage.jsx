@@ -38,6 +38,8 @@ const LoginPage = () => {
         <h1>Sign In</h1>
         <p className='login-text'>Please login to access your dashboard.</p>
 
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+
         <form
   className="login-form"
   method="POST"
@@ -74,8 +76,6 @@ const LoginPage = () => {
       className="input-field"
     />
   </div>
-
-  {error && <div className="error-message">{error}</div>}
 
   <button className="button-login" type="submit" disabled={isLoading}>
     {isLoading ? "Signing in..." : "Sign in"}
