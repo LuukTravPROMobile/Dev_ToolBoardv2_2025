@@ -18,13 +18,12 @@ const OpenTicketsPage = () => {
 
   return (
     <div
-      className="ticket-container"
+      className="page-container"
       style={{
-        backgroundImage: `url(${backgroundImage})`
-      }}
+        backgroundImage: `url(${backgroundImage})`}}
     >
       <div
-        className="ticket-page">
+        className="not-found-page">
         <h1 className="not-found-title">Open Tickets</h1>
         <p className="not-found-message">
             Here you can view and manage your open tickets.
