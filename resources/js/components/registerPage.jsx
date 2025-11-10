@@ -16,18 +16,20 @@ const RegisterPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/php/register.php', {
+      const response = await fetch('http://127.0.0.1:8000/register.php', {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
       });
-      const data = await response.json();
+      const data = await response;
+      const text = await data.text({ email, password});
 
 
       try {
-        data = JSON.parse(text); // Attempt JSON parsing
+        data = JSON.parse(text);
       } catch (err) {
-        console.error('Failed to parse JSON:', text);
+        console.error('Failed to parse JSON:');
         setError('Server returned invalid response');
         setLoading(false);
         return;
@@ -36,7 +38,7 @@ const RegisterPage = () => {
       if (response.ok) {
         console.log('User registered:', data);
         setLoading(false);
-        navigate('/login'); // Redirect to login
+        navigate('/login');
       } else {
         setError(data.message || 'Registration failed');
         setLoading(false);
@@ -52,16 +54,7 @@ const RegisterPage = () => {
     <div
       className="page-container"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop: "60px",
-      }}
+        backgroundImage: `url(${backgroundImage})`}}
     >
       <div className="not-found-page">
         <h1 className="not-found-title">Register Account</h1>

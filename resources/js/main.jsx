@@ -10,6 +10,7 @@ import NotFoundPage from './components/notFoundPage';
 import LoginPage from './components/loginPage';
 import RegisterPage from './components/registerPage';
 import ProfilePage from './components/profilePage';
+import OpenTicketsPage from './components/openTicketsPage';
 
 // Auth Context
 import { AuthProvider } from './authContext';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/opentickets" element={<OpenTicketsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
