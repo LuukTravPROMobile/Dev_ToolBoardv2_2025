@@ -1,0 +1,4 @@
+root: C:\Users\luukm\Dev_ToolBoardv2_2025 
+path: C:\Program Files\nodejs 
+arch: 64 
+proxy: none
